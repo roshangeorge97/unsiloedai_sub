@@ -29,11 +29,11 @@ An interactive system for querying PDF documents using AI. Built with FastAPI, N
 ### Backend Installation
 
 1. Create and activate virtual environment:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Windows: .\venv\Scripts\activate
-```
+  
+  ```bash
+  python -m venv venv
+  source venv/bin/activate  # Windows: .\venv\Scripts\activate
+  ```
 
 2. Install dependencies:
 
@@ -74,19 +74,34 @@ npm run dev
 ```bash
 pdf-qa-system/
 ├── backend/
-│   ├── main.py          # FastAPI application
-│   └── chroma_db/             # Vector database storage
+│   ├── main.py           # FastAPI application
+│   └── chroma_db/        # Vector database storage
 ├── frontend/
 │   ├── src/app/          # Next.js pages
 └── README.md
 ```
 
+## API Endpoints
 
-### API Endpoints
+### POST `/upload/`
+- **Description**: Upload and process a PDF file.
+- **Request**: 
+  - `file`: PDF file to upload.
+- **Response**: 
+  - `message`: Success or error message.
 
-- POST /upload: PDF file upload
-- POST /query: Question answering
-- GET /documents: List processed documents
+### POST `/query/`
+- **Description**: Query the processed documents and generate a response.
+- **Request**: 
+  - `query`: The question to ask.
+- **Response**: 
+  - `answer`: AI-generated response.
+  - `sources`: List of sources with page numbers and filenames.
+
+### GET `/health`
+- **Description**: Check if the service is running.
+- **Response**: 
+  - `status`: Health status of the service.
 
 ### Usage
 
@@ -102,9 +117,3 @@ pdf-qa-system/
 - Supported formats: PDF only
 - Automatic retry for failed uploads
 - Error messages for invalid queries
-
-Development
-
-- Run tests: pytest (backend) or npm test (frontend)
-- Format code: black . (backend) or npm run format (frontend)
-- Check linting: flake8 (backend) or npm run lint (frontend)
