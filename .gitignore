@@ -5,20 +5,6 @@ backend/venv/
 frontend/node_modules/
 frontend/.next/
 
-# Ignore build files
-frontend/public/*.map
-frontend/public/*.log
-frontend/.vercel/
-frontend/.turbo/
-
-# Ignore config and cache files
-frontend/.eslintcache
-frontend/.DS_Store
-
-# Ignore package-lock and yarn.lock if using pnpm or yarn
-frontend/yarn.lock
-frontend/pnpm-lock.yaml
-
 # Logs and temporary files
 *.log
 *.temp
