@@ -31,6 +31,7 @@ An interactive system for querying PDF documents using AI. Built with FastAPI, N
 1. Create and activate virtual environment:
   
   ```bash
+  cd backend
   python -m venv venv
   source venv/bin/activate  # Windows: .\venv\Scripts\activate
   ```
@@ -76,6 +77,7 @@ pdf-qa-system/
 ├── backend/
 │   ├── main.py           # FastAPI application
 │   └── chroma_db/        # Vector database storage
+│   └── venv/             # Virtual environment
 ├── frontend/
 │   ├── src/app/          # Next.js pages
 └── README.md
